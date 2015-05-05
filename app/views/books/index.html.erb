@@ -27,14 +27,20 @@
 
     <div class="sidebar-list">
       <ul>
-        <li><a href="#">Magazines</a> </li>
-        <li><a href="#">Comics</a> </li>
-        <li><a href="#">CD/DVD</a> </li>
-        <li><a href="#">Cards</a> </li>
-        <li><a href="#">Calendars</a> </li>
-        <li><a href="#">Blanks</a> </li>
-        <li><a href="#">Rarity</a> </li>
-        <li><a href="#">Antiques</a> </li>
+        <% if Category.count > 0 %>
+            <% Category.all.each do |category| %>
+                <li> <a href="#"><%= category.has_attribute?(:name) ? category.name : 'No Name Attribute' %></a> </li>
+            <% end %>
+        <% else %>
+            <li><a href="#">Magazines</a> </li>
+            <li><a href="#">Comics</a> </li>
+            <li><a href="#">CD/DVD</a> </li>
+            <li><a href="#">Cards</a> </li>
+            <li><a href="#">Calendars</a> </li>
+            <li><a href="#">Blanks</a> </li>
+            <li><a href="#">Rarity</a> </li>
+            <li><a href="#">Antiques</a> </li>
+        <% end %>
       </ul>
     </div>
 
@@ -45,14 +51,20 @@
 
     <div class="sidebar-list">
       <ul>
-        <li><a href="#">John Updike</a> </li>
-        <li><a href="#">Jonathan Safran Foer</a> </li>
-        <li><a href="#">Jonathan Swift</a> </li>
-        <li><a href="#">Jorge Luis Borges</a> </li>
-        <li><a href="#">José Saramago</a> </li>
-        <li><a href="#">Joseph Conrad</a> </li>
-        <li><a href="#">Joseph Heller</a> </li>
-        <li><a href="#">Jostein Gaarder</a> </li>
+        <% if Author.count > 0 %>
+            <% Author.all.each do |author| %>
+                <li> <a href="#"><%= author.has_attribute?(:name) ? author.name : 'No Name Attribute' %></a> </li>
+            <% end %>
+        <% else %>
+            <li><a href="#">John Updike</a> </li>
+            <li><a href="#">Jonathan Safran Foer</a> </li>
+            <li><a href="#">Jonathan Swift</a> </li>
+            <li><a href="#">Jorge Luis Borges</a> </li>
+            <li><a href="#">José Saramago</a> </li>
+            <li><a href="#">Joseph Conrad</a> </li>
+            <li><a href="#">Joseph Heller</a> </li>
+            <li><a href="#">Jostein Gaarder</a> </li>
+        <% end %>
       </ul>
     </div>
   </div>
@@ -65,66 +77,79 @@
 
     <div class="products-list">
       <ul>
-        <li>
-          <p class="product-img-box">
-            <span style="display: inline-block; height: 100%; vertical-align: middle"></span>
-            <%= image_tag 'book1.png' %>
-          </p>
+        <% if Book.count > 0 %>
+            <% Book.all.each do |book| %>
+                <li>
+                  <p class="product-img-box">
+                    <span style="display: inline-block; height: 100%; vertical-align: middle"></span>
+                    <%= image_tag("#{book.has_attribute?(:url) ? book.url : ''}", alt: 'Insert URL for Book') %>
+                  </p>
 
-          <p class="product-price">$35.00</p>
-          <a href="#">The Rosie Project A Nove</a>
-        </li>
+                  <p class="product-price"><%= book.has_attribute?(:price) ? book.price : 'No Price Attribute' %></p>
+                  <a href="#"><%= book.has_attribute?(:name) ? book.name : 'No Name Attribute' %></a>
+                </li>
+            <% end %>
+        <% else %>
+            <li>
+              <p class="product-img-box">
+                <span style="display: inline-block; height: 100%; vertical-align: middle"></span>
+                <%= image_tag 'book1.png' %>
+              </p>
 
-        <li>
-          <p class="product-img-box">
-            <span style="display: inline-block; height: 100%; vertical-align: middle"></span>
-            <%= image_tag 'book6.png' %>
-          </p>
+              <p class="product-price">$35.00</p>
+              <a href="#">The Rosie Project A Nove</a>
+            </li>
 
-          <p class="product-price">$35.00</p>
-          <a href="#">The Rosie Project A Nove</a>
-        </li>
+            <li>
+              <p class="product-img-box">
+                <span style="display: inline-block; height: 100%; vertical-align: middle"></span>
+                <%= image_tag 'book6.png' %>
+              </p>
 
-        <li>
-          <div class="product-img-box">
-            <span style="display: inline-block; height: 100%; vertical-align: middle"></span>
-            <%= image_tag 'book2.png' %>
-          </div>
+              <p class="product-price">$35.00</p>
+              <a href="#">The Rosie Project A Nove</a>
+            </li>
 
-          <p class="product-price">$35.00</p>
-          <a href="#">The Rosie Project A Nove</a>
-        </li>
+            <li>
+              <div class="product-img-box">
+                <span style="display: inline-block; height: 100%; vertical-align: middle"></span>
+                <%= image_tag 'book2.png' %>
+              </div>
 
-        <li>
-          <p class="product-img-box">
-            <span style="display: inline-block; height: 100%; vertical-align: middle"></span>
-            <%= image_tag 'book3.png' %>
-          </p>
+              <p class="product-price">$35.00</p>
+              <a href="#">The Rosie Project A Nove</a>
+            </li>
 
-          <p class="product-price">$35.00</p>
-          <a href="#">The Rosie Project A Nove</a>
-        </li>
+            <li>
+              <p class="product-img-box">
+                <span style="display: inline-block; height: 100%; vertical-align: middle"></span>
+                <%= image_tag 'book3.png' %>
+              </p>
 
-        <li>
-          <p class="product-img-box">
-            <span style="display: inline-block; height: 100%; vertical-align: middle"></span>
-            <%= image_tag 'book4.png' %>
-          </p>
+              <p class="product-price">$35.00</p>
+              <a href="#">The Rosie Project A Nove</a>
+            </li>
 
-          <p class="product-price">$35.00</p>
-          <a href="#">The Rosie Project A Nove</a>
-        </li>
+            <li>
+              <p class="product-img-box">
+                <span style="display: inline-block; height: 100%; vertical-align: middle"></span>
+                <%= image_tag 'book4.png' %>
+              </p>
 
-        <li>
-          <p class="product-img-box">
-            <span style="display: inline-block; height: 100%; vertical-align: middle"></span>
-            <%= image_tag 'book5.png' %>
-          </p>
+              <p class="product-price">$35.00</p>
+              <a href="#">The Rosie Project A Nove</a>
+            </li>
 
-          <p class="product-price">$35.00</p>
-          <a href="#">The Rosie Project A Nove</a>
-        </li>
+            <li>
+              <p class="product-img-box">
+                <span style="display: inline-block; height: 100%; vertical-align: middle"></span>
+                <%= image_tag 'book5.png' %>
+              </p>
 
+              <p class="product-price">$35.00</p>
+              <a href="#">The Rosie Project A Nove</a>
+            </li>
+        <% end %>
       </ul>
     </div>
   </div>
