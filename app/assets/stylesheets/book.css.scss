@@ -1,0 +1,23 @@
+#bs-same-author-books{
+  background: asset_url('related_books.png');
+  height: 680px;
+}
+
+#book-info{
+  background: asset_url('book_detail_1.png');
+  width: 100%;
+  height: 850px;
+}
+
+#book-other-detail{
+  background: asset_url('book_detail_2.png');
+  width: 100%;
+  height: 335px;
+}
+
+#bs-same-categories-books{
+  margin-top: 10px;
+  width: 100%;
+  height: 425px;
+  background: asset_url('book_detail_3.png');
+}

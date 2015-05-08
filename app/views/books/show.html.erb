@@ -1,10 +1,29 @@
+
+<!--
+    ################
+    NOTE
+    ###############
+
+    You can use
+    @book: current viewing book
+
+    and below ruby code
+-->
+
+<%
+   authors = Author.where(id: @book.author_ids) # find all author who have id is in @book.author_ids
+   same_author_book_ids = (authors.map { |a| a.book_ids }).flatten.uniq
+   @same_author_book_ids = Book.where(id: same_author_book_ids) #query books which have id in same_author_book_ids
+   @same_category_books = Book.all #TODO: Add relations between books and categories as books and authors, Then change this line of code
+%>
+
 <!--  PAGE HEADER  -->
 <div id="page-header">
   <div class="container">
     <ul>
       <li><a href="/">Home</a></li>
       <li><a href="/">Books</a></li>
-      <li><a href="#">Authors</a></li>
+      <li><a href="#">Author</a></li>
       <li><a href="#">Categories</a></li>
       <li><a href="#">About us</a></li>
       <li><a href="#">Contact us</a></li>
@@ -27,6 +46,14 @@
 
     <div class="sidebar-list" id="lp-best-sellers">
     </div>
+
+    <!-- Best sellers -->
+    <div class="box-title box-content">
+      Books of Author Name
+    </div>
+
+    <div class="sidebar-list" id="bs-same-author-books">
+    </div>
   </div>
 
   <!--  MAIN CONTENT  -->
@@ -36,22 +63,26 @@
     </div>
 
     <div class="products-list">
-      <ul>
-        <% if Book.count > 0 %>
-            <% Book.all.each do |book| %>
-                <li>
-                  <p class="product-img-box">
-                    <span style="display: inline-block; height: 100%; vertical-align: middle"></span>
-                    <%= image_tag("#{book.has_attribute?(:image) ? book.image: ''}", alt: 'Insert URL for Book') %>
-                  </p>
-
-                  <p class="product-price"><%= book.has_attribute?(:price) ? ('$' + book.price.to_s) : 'No Price Attribute' %></p>
-                  <%= link_to (book.has_attribute?(:name) ? book.name : 'No Name Attribute'), "books/#{book.id}" %>
-                </li>
-            <% end %>
-        <% end %>
-      </ul>
+      <!--BOOK INFO-->
+      <div id="book-info"></div>
+      <!--END BOOK INFO-->
     </div>
+
+    <!--BOOK OTHER DETAIL-->
+    <div class="box-title box-content">
+      Additional Information
+    </div>
+    <div id="book-other-detail"></div>
+    <!--END BOOK Other detail-->
+
+
+    <!-- Same category BOOKs -->
+    <div class="box-title box-content">
+      Related Books
+    </div>
+    <div id="bs-same-categories-books"></div>
+    <!--END BOOK Other detail-->
+
   </div>
   <!--  END MAIN CONTENT  -->
 </div>
@@ -109,32 +140,32 @@
 <script src="//maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
 
 <script>
-  (function() {
+    (function() {
 
-      if(!!navigator.geolocation) {
+        if(!!navigator.geolocation) {
 
-          var map;
+            var map;
 
-          var mapOptions = {
-              zoom: 15,
-              mapTypeId: google.maps.MapTypeId.ROADMAP,
-              scrollwheel: false
-          };
+            var mapOptions = {
+                zoom: 15,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                scrollwheel: false
+            };
 
-          map = new google.maps.Map(document.getElementById('google_canvas'), mapOptions);
+            map = new google.maps.Map(document.getElementById('google_canvas'), mapOptions);
 
-          var geolocate = new google.maps.LatLng(21.009582, 105.809916);
+            var geolocate = new google.maps.LatLng(21.009582, 105.809916);
 
-          var infowindow = new google.maps.InfoWindow({
-              map: map,
-              position: geolocate,
-              content: '<h5>Techmaster</h5>'
-          });
+            var infowindow = new google.maps.InfoWindow({
+                map: map,
+                position: geolocate,
+                content: '<h5>Techmaster</h5>'
+            });
 
-          map.setCenter(geolocate);
-      } else {
-          document.getElementById('google_canvas').innerHTML = 'No Geolocation Support.';
-      }
+            map.setCenter(geolocate);
+        } else {
+            document.getElementById('google_canvas').innerHTML = 'No Geolocation Support.';
+        }
 
-  })();
+    })();
 </script>
