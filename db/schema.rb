@@ -11,21 +11,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150505073245) do
+ActiveRecord::Schema.define(version: 20150508065642) do
 
   create_table "authors", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "name"
+    t.string   "email"
+    t.string   "avatar"
+    t.string   "country"
+    t.integer  "age"
+    t.text     "about"
   end
+
+  create_table "authors_books", force: :cascade do |t|
+    t.integer "author_id"
+    t.integer "book_id"
+  end
+
+  add_index "authors_books", ["author_id"], name: "index_authors_books_on_author_id"
+  add_index "authors_books", ["book_id"], name: "index_authors_books_on_book_id"
 
   create_table "books", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "name"
+    t.text     "about"
+    t.string   "publisher"
+    t.string   "year"
+    t.integer  "isbn"
+    t.float    "price"
+    t.string   "image"
   end
 
   create_table "categories", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "name"
+    t.string   "image"
   end
 
 end

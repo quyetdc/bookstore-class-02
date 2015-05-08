@@ -17,6 +17,11 @@
 //  padding-right: 35px;
 }
 
+#lp-best-sellers{
+  background: asset_url('best_sellers.png');
+  height: 645px;
+}
+
 .box-title{
   font-weight: bold;
   color: #ffffff;
@@ -107,7 +112,8 @@
   vertical-align: middle;
 
   img {
-    width: 80%;
+    width: 90%;
+    height: 265px;
     margin: auto;
     display: inline-block;
     vertical-align: middle;

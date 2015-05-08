@@ -1,0 +1,259 @@
+/* line 1, /home/quyetdc/Desktop/ror_course_02/day06/book_store_02/app/assets/stylesheets/layout.css.scss */
+body {
+  margin: 0px;
+  background-color: #f8f8f8;
+}
+
+/* line 6, /home/quyetdc/Desktop/ror_course_02/day06/book_store_02/app/assets/stylesheets/layout.css.scss */
+.container {
+  width: 1168px;
+  margin: auto;
+}
+
+/* line 11, /home/quyetdc/Desktop/ror_course_02/day06/book_store_02/app/assets/stylesheets/layout.css.scss */
+#page-header {
+  width: 100%;
+  height: 50px;
+  padding: 5px 0px;
+  border-bottom: 1px solid #e3e3e3;
+  box-shadow: 0 3px 6px -6px black;
+  position: fixed;
+  top: 0px;
+  background-color: #ffffff;
+}
+/* line 21, /home/quyetdc/Desktop/ror_course_02/day06/book_store_02/app/assets/stylesheets/layout.css.scss */
+#page-header ul {
+  list-style: none;
+  padding-left: 0px;
+}
+/* line 25, /home/quyetdc/Desktop/ror_course_02/day06/book_store_02/app/assets/stylesheets/layout.css.scss */
+#page-header ul :first-child {
+  padding-left: 0px !important;
+}
+/* line 29, /home/quyetdc/Desktop/ror_course_02/day06/book_store_02/app/assets/stylesheets/layout.css.scss */
+#page-header ul li {
+  display: inline;
+  text-transform: uppercase;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+/* line 35, /home/quyetdc/Desktop/ror_course_02/day06/book_store_02/app/assets/stylesheets/layout.css.scss */
+#page-header ul li a {
+  color: #000000;
+  text-decoration: none;
+}
+/* line 40, /home/quyetdc/Desktop/ror_course_02/day06/book_store_02/app/assets/stylesheets/layout.css.scss */
+#page-header ul li a:hover {
+  color: #FC5C3C;
+}
+
+/* line 47, /home/quyetdc/Desktop/ror_course_02/day06/book_store_02/app/assets/stylesheets/layout.css.scss */
+#google_canvas {
+  width: 100%;
+  height: 370px;
+  border-bottom: 2px solid #ffffff;
+  border-top: 2px solid #ffffff;
+  box-shadow: 0 3px 6px -6px white;
+  margin-top: 80px;
+  float: left;
+}
+
+/* line 57, /home/quyetdc/Desktop/ror_course_02/day06/book_store_02/app/assets/stylesheets/layout.css.scss */
+#footer {
+  position: relative;
+  float: left;
+  width: 100%;
+  background-color: #ffffff;
+  padding-top: 20px;
+}
+
+/* line 65, /home/quyetdc/Desktop/ror_course_02/day06/book_store_02/app/assets/stylesheets/layout.css.scss */
+.ft-col {
+  width: 30%;
+  float: left;
+}
+/* line 69, /home/quyetdc/Desktop/ror_course_02/day06/book_store_02/app/assets/stylesheets/layout.css.scss */
+.ft-col ul {
+  padding-left: 0px;
+  list-style: none;
+  margin-top: 0px;
+}
+/* line 73, /home/quyetdc/Desktop/ror_course_02/day06/book_store_02/app/assets/stylesheets/layout.css.scss */
+.ft-col ul :first-child {
+  padding-top: 15px;
+}
+/* line 76, /home/quyetdc/Desktop/ror_course_02/day06/book_store_02/app/assets/stylesheets/layout.css.scss */
+.ft-col ul :last-child {
+  padding-bottom: 24px;
+}
+/* line 79, /home/quyetdc/Desktop/ror_course_02/day06/book_store_02/app/assets/stylesheets/layout.css.scss */
+.ft-col ul li {
+  display: block;
+  font-size: 16px;
+  padding: 12px 0px;
+}
+/* line 84, /home/quyetdc/Desktop/ror_course_02/day06/book_store_02/app/assets/stylesheets/layout.css.scss */
+.ft-col ul li a {
+  text-decoration: none;
+  color: #99A4AB;
+}
+/* line 89, /home/quyetdc/Desktop/ror_course_02/day06/book_store_02/app/assets/stylesheets/layout.css.scss */
+.ft-col ul li a:hover {
+  color: #FC5C3C;
+}
+
+/* line 96, /home/quyetdc/Desktop/ror_course_02/day06/book_store_02/app/assets/stylesheets/layout.css.scss */
+.ft-title {
+  font-size: 22px;
+  text-transform: uppercase;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-weight: 300;
+  color: #010101;
+}
+/* line 1, /home/quyetdc/Desktop/ror_course_02/day06/book_store_02/app/assets/stylesheets/main.css.scss */
+#landing-img {
+  margin-top: 110px;
+  background: url(/assets/header-eeb6149fa5ed3d50d1f65fca0711b7a28490e286b6c9b60261bbe3d0b031c4b0.png);
+  height: 460px;
+}
+
+/* line 7, /home/quyetdc/Desktop/ror_course_02/day06/book_store_02/app/assets/stylesheets/main.css.scss */
+.sidebar {
+  width: 270px;
+  margin-right: 35px;
+  float: left;
+}
+
+/* line 14, /home/quyetdc/Desktop/ror_course_02/day06/book_store_02/app/assets/stylesheets/main.css.scss */
+#landing-products {
+  width: 863px;
+  float: left;
+}
+
+/* line 20, /home/quyetdc/Desktop/ror_course_02/day06/book_store_02/app/assets/stylesheets/main.css.scss */
+#lp-best-sellers {
+  background: url(/best-sellers.png);
+}
+
+/* line 25, /home/quyetdc/Desktop/ror_course_02/day06/book_store_02/app/assets/stylesheets/main.css.scss */
+.box-title {
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #019587;
+  padding: 20px 0px 20px 18px;
+  font-size: 22px;
+}
+
+/* line 33, /home/quyetdc/Desktop/ror_course_02/day06/book_store_02/app/assets/stylesheets/main.css.scss */
+.box-content {
+  display: block;
+  margin-top: 50px;
+}
+
+/* line 39, /home/quyetdc/Desktop/ror_course_02/day06/book_store_02/app/assets/stylesheets/main.css.scss */
+.sidebar-list ul {
+  box-shadow: 0 3px 10px -4px black;
+  background-color: #ffffff;
+  list-style: none;
+  margin-top: 0px;
+}
+/* line 45, /home/quyetdc/Desktop/ror_course_02/day06/book_store_02/app/assets/stylesheets/main.css.scss */
+.sidebar-list ul :first-child {
+  padding-top: 24px;
+}
+/* line 48, /home/quyetdc/Desktop/ror_course_02/day06/book_store_02/app/assets/stylesheets/main.css.scss */
+.sidebar-list ul :last-child {
+  padding-bottom: 24px;
+}
+/* line 51, /home/quyetdc/Desktop/ror_course_02/day06/book_store_02/app/assets/stylesheets/main.css.scss */
+.sidebar-list ul li {
+  display: block;
+  font-size: 18px;
+  padding: 12px 0px;
+}
+/* line 56, /home/quyetdc/Desktop/ror_course_02/day06/book_store_02/app/assets/stylesheets/main.css.scss */
+.sidebar-list ul li a {
+  text-decoration: none;
+  color: #99A4AB;
+}
+/* line 61, /home/quyetdc/Desktop/ror_course_02/day06/book_store_02/app/assets/stylesheets/main.css.scss */
+.sidebar-list ul li a:hover {
+  color: #FC5C3C;
+}
+
+/* line 69, /home/quyetdc/Desktop/ror_course_02/day06/book_store_02/app/assets/stylesheets/main.css.scss */
+.products-list ul {
+  box-shadow: 0 3px 10px -4px black;
+  background-color: #ffffff;
+  list-style: none;
+  margin-top: 0px;
+  padding: 0px;
+}
+/* line 76, /home/quyetdc/Desktop/ror_course_02/day06/book_store_02/app/assets/stylesheets/main.css.scss */
+.products-list ul li {
+  display: inline-block;
+  font-size: 18px;
+  padding: 12px 0px;
+  width: 30%;
+  margin-left: 1.5%;
+  margin-right: 1.5%;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  display: inline-block;
+  vertical-align: middle;
+}
+/* line 91, /home/quyetdc/Desktop/ror_course_02/day06/book_store_02/app/assets/stylesheets/main.css.scss */
+.products-list ul li a {
+  text-decoration: none;
+  color: #374046;
+}
+/* line 96, /home/quyetdc/Desktop/ror_course_02/day06/book_store_02/app/assets/stylesheets/main.css.scss */
+.products-list ul li a:hover {
+  color: #FC5C3C;
+}
+
+/* line 103, /home/quyetdc/Desktop/ror_course_02/day06/book_store_02/app/assets/stylesheets/main.css.scss */
+.product-img-box {
+  padding: 25px;
+  display: block;
+  width: 80%;
+  height: 260px;
+  margin: auto;
+  text-align: center;
+  background-color: #f6f6f6;
+  display: inline-block;
+  vertical-align: middle;
+}
+/* line 114, /home/quyetdc/Desktop/ror_course_02/day06/book_store_02/app/assets/stylesheets/main.css.scss */
+.product-img-box img {
+  width: 80%;
+  margin: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* line 122, /home/quyetdc/Desktop/ror_course_02/day06/book_store_02/app/assets/stylesheets/main.css.scss */
+.product-price {
+  color: #009587;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
