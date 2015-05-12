@@ -12,6 +12,16 @@ class BooksController < ApplicationController
   # Get /books/:id
   def show
     @book = Book.where(id: params[:id]).first
+
+    @authors = @book.authors
+
+    @categories = Category.all
+
+    respond_to do |format|
+      format.html { render 'show'}
+      # format.json { render @book.to_json, status: :ok}
+    end
+
   end
 
 end
