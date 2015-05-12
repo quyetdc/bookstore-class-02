@@ -1,0 +1,82 @@
+
+<!--  GOOGLE MAPS  -->
+<div id="google_canvas"></div>
+
+<div id="footer">
+  <div class="container">
+    <div class="ft-col">
+      <div class="ft-title">
+        INFORMATION
+      </div>
+
+      <ul>
+        <li><a href="#">Home</a> </li>
+        <li><a href="#">Search</a> </li>
+        <li><a href="#">Blog</a> </li>
+        <li><a href="#">About us</a> </li>
+        <li><a href="#">Contact us</a> </li>
+      </ul>
+    </div>
+
+    <div class="ft-col">
+      <div class="ft-title">
+        COLLECTIONS
+      </div>
+
+      <ul>
+        <li><a href="#">Antiques</a> </li>
+        <li><a href="#">Blanks</a> </li>
+        <li><a href="#">Books</a> </li>
+        <li><a href="#">Calendars</a> </li>
+        <li><a href="#">Cards</a> </li>
+        <li><a href="#">CD/DVD</a> </li>
+        <li><a href="#">Comics</a> </li>
+      </ul>
+    </div>
+
+    <div class="ft-col">
+      <div class="ft-title">
+        MY ACCOUNT
+      </div>
+
+      <ul>
+        <li><a href="#">My account</a> </li>
+        <li><a href="#">My addresses</a> </li>
+        <li><a href="#">My card</a> </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script src="//maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
+
+<script>
+    (function() {
+
+        if(!!navigator.geolocation) {
+
+            var map;
+
+            var mapOptions = {
+                zoom: 15,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                scrollwheel: false
+            };
+
+            map = new google.maps.Map(document.getElementById('google_canvas'), mapOptions);
+
+            var geolocate = new google.maps.LatLng(21.009582, 105.809916);
+
+            var infowindow = new google.maps.InfoWindow({
+                map: map,
+                position: geolocate,
+                content: '<h5>Techmaster</h5>'
+            });
+
+            map.setCenter(geolocate);
+        } else {
+            document.getElementById('google_canvas').innerHTML = 'No Geolocation Support.';
+        }
+
+    })();
+</script>
