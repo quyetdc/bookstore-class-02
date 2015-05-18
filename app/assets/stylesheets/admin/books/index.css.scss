@@ -1,0 +1,27 @@
+.admin-page-title{
+  color: #999999;
+  font-size: 20px;
+  width: 100%;
+  padding-left: 5%;
+  margin-top: 20px;
+  border-bottom: 2px solid #009587;
+  padding-bottom: 60px;
+  padding-right: 5%;
+}
+
+.admin-container{
+  background: #ffffff;
+  border: 1px solid #e3e3e3;
+  border-bottom: none;
+  min-height: 500px;
+  margin-top: 100px;
+  box-shadow: 0 3px 10px -4px black;
+}
+
+.ic-menu{
+  cursor: pointer;
+  margin-right: 10%;
+  text-align: right;
+  display: list-item !important;
+}
+

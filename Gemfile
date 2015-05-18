@@ -47,3 +47,5 @@ gem "twitter-bootstrap-rails"
 
 gem 'faker', '~> 1.4.3'
 
+gem "font-awesome-rails"
+

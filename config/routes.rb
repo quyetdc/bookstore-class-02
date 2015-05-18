@@ -8,6 +8,11 @@ Rails.application.routes.draw do
   get 'books/:id' => "books#show"
 
 
+  namespace :admin do
+    resources :books
+  end
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

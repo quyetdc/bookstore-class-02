@@ -1,62 +1,75 @@
 <!--  PAGE HEADER  -->
-<div id="page-header">
-  <div class="container">
-    <ul id="main-nav">
-      <li><a href="/">Home</a></li>
-      <li><a href="/">Books</a></li>
-      <li id="authors-nav-dropdown"><a href="#">Authors</a></li>
-      <li id="categories-nav-dropdown"><a href="#">Categories</a></li>
-      <li><a href="#">About us</a></li>
-      <li><a href="#">Contact us</a></li>
-    </ul>
+<% if controller_name != 'admin' && controller_path.split('/').first != 'admin' %>
+    <div id="page-header">
+      <div class="container">
+        <ul id="main-nav">
+          <li><a href="/">Home</a></li>
+          <li><a href="/">Books</a></li>
+          <li id="authors-nav-dropdown"><a href="#">Authors</a></li>
+          <li id="categories-nav-dropdown"><a href="#">Categories</a></li>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Contact us</a></li>
+        </ul>
 
-    <ul id="categories-nav">
-      <ul class="nav-list list-inline">
-        <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Running.png"><span>Running</span></a></li>
-        <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Basketball.png"><span>Basketball</span></a></li>
-        <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Football.png"><span>Football</span></a></li>
-        <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Soccer.png"><span>Soccer</span></a></li>
-        <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_MensTraining.png"><span>Men's Training</span></a></li>
-        <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_WomensTraining.png"><span>Women's Training</span></a></li>
-      </ul>
-    </ul>
+        <ul id="categories-nav">
+          <ul class="nav-list list-inline">
+            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Running.png"><span>Running</span></a></li>
+            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Basketball.png"><span>Basketball</span></a></li>
+            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Football.png"><span>Football</span></a></li>
+            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Soccer.png"><span>Soccer</span></a></li>
+            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_MensTraining.png"><span>Men's Training</span></a></li>
+            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_WomensTraining.png"><span>Women's Training</span></a></li>
+          </ul>
+        </ul>
 
-    <ul id="authors-nav">
-      <ul class="nav-list list-inline container">
-        <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_MensTraining.png"><span>Men's Training</span></a></li>
-        <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Basketball.png"><span>Basketball</span></a></li>
-        <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Running.png"><span>Running</span></a></li>
-        <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Football.png"><span>Football</span></a></li>
-        <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Soccer.png"><span>Soccer</span></a></li>
-        <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_WomensTraining.png"><span>Women's Training</span></a></li>
-      </ul>
-    </ul>
+        <ul id="authors-nav">
+          <ul class="nav-list list-inline container">
+            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_MensTraining.png"><span>Men's Training</span></a></li>
+            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Basketball.png"><span>Basketball</span></a></li>
+            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Running.png"><span>Running</span></a></li>
+            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Football.png"><span>Football</span></a></li>
+            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Soccer.png"><span>Soccer</span></a></li>
+            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_WomensTraining.png"><span>Women's Training</span></a></li>
+          </ul>
+        </ul>
 
-  </div>
-</div>
+      </div>
+    </div>
 
-<script>
-    $("#categories-nav-dropdown").click(function() {
-        if ($("#authors-nav").is(":visible")){
-            $("#authors-nav").hide();
-            $("#categories-nav").fadeIn(350);
-        } else {
-            $("#categories-nav").slideToggle(350);
-        }
+    <script>
+        $("#categories-nav-dropdown").click(function() {
+            if ($("#authors-nav").is(":visible")){
+                $("#authors-nav").hide();
+                $("#categories-nav").fadeIn(350);
+            } else {
+                $("#categories-nav").slideToggle(350);
+            }
 
-        $("#categories-nav-dropdown a").toggleClass('active');
-        $("#authors-nav-dropdown a").removeClass('active');
-    });
+            $("#categories-nav-dropdown a").toggleClass('active');
+            $("#authors-nav-dropdown a").removeClass('active');
+        });
 
-    $("#authors-nav-dropdown").click(function() {
-        if ($("#categories-nav").is(":visible")){
-            $("#categories-nav").hide();
-            $("#authors-nav").fadeIn(350);
-        } else {
-            $("#authors-nav").slideToggle(350);
-        }
+        $("#authors-nav-dropdown").click(function() {
+            if ($("#categories-nav").is(":visible")){
+                $("#categories-nav").hide();
+                $("#authors-nav").fadeIn(350);
+            } else {
+                $("#authors-nav").slideToggle(350);
+            }
 
-        $("#authors-nav-dropdown a").toggleClass('active');
-        $("#categories-nav-dropdown a").removeClass('active');
-    });
-</script>
+            $("#authors-nav-dropdown a").toggleClass('active');
+            $("#categories-nav-dropdown a").removeClass('active');
+        });
+    </script>
+<% else %>
+    <div id="page-header">
+      <div class="container">
+        <ul id="main-nav">
+          <li><a href="/">Home</a></li>
+          <li><a href="#">Books</a></li>
+          <li id="authors-nav-dropdown"><a href="#">Authors</a></li>
+          <li id="categories-nav-dropdown"><a href="#">Categories</a></li>
+        </ul>
+      </div>
+    </div>
+<% end %>

@@ -1,0 +1,46 @@
+<!-- PAGE CONTENT -->
+<div class="container">
+    <!--  MAIN CONTENT  -->
+  <div class="admin-container">
+    <div class="admin-page-title">
+      <div class="col-md-6" style="margin-top: 10px; padding-left: 0px;"> BOOKS </div>
+      <div class="col-md-6" style="text-align: right; padding-right: 0px;"> <%= link_to 'Add New', {controller: 'admin/books', action: 'new'}, {class: 'btn btn-primary'}%></div>
+    </div>
+
+    <div class="products-list">
+      <ul>
+        <% if Book.count > 0 %>
+            <% Book.all.each do |book| %>
+                <li>
+                  <p class="product-img-box">
+                    <span style="display: inline-block; height: 100%; vertical-align: middle"></span>
+                    <%= image_tag("#{book.has_attribute?(:image) ? book.image: ''}", alt: 'Insert URL for Book') %>
+                  </p>
+
+                  <p class="product-price" style="text-align: left; padding-left: 20px">
+                    <%= link_to (book.has_attribute?(:name) ? book.name : 'No Name Attribute'),
+                                {controller: 'admin/books', action: 'show', id: book.id},
+                                {class: 'col-md-8', style: "float: left; padding-left: 12x; overflow: hidden;, white-space: nowrap; text-overflow: ellipsis"} %>
+                    <div class="col-md-3" style="text-align: right; padding-right: 3%;">
+
+                      <div class="btn-group">
+                        <i class="fa fa-list ic-menu" style="color: #3071A9" data-toggle="dropdown" aria-expanded="false"></i>
+
+                        <div class="dropdown-menu" role="menu" style="text-align: left; padding: 10px 20px; padding-top: 20px; right: 0px !important; left: inherit !important;">
+                          <p><a href="#" style="padding: 5px">Edit</a></p>
+                          <p><a href="#" style="padding: 5px">Delete</a></p>
+                          <p><a href="#" style="padding: 5px">Detail</a></p>
+                        </div>
+                      </div>
+                    </div>
+                  </p>
+                </li>
+            <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+    <!--  END MAIN CONTENT  -->
+</div>
+<!-- END PAGE CONTENT -->

@@ -3,6 +3,10 @@ body {
   background-color: #f8f8f8;
 }
 
+#content{
+  min-height: 250px;
+}
+
 .container {
   width: 1168px;
   margin: auto;
@@ -20,6 +24,8 @@ body {
   padding-bottom: 8px;
 
   background-color: #ffffff;
+
+  z-index: 100;
 
   ul#main-nav {
     list-style: none;
