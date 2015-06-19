@@ -22,11 +22,6 @@ ActiveAdmin.register Book do
       f.input :name
       f.input :year
       f.input :image
-      f.inputs do
-        f.has_and_belongs_to_many :authors, heading: 'Authors' do |a|
-          a.input :id
-        end      
-      end
     end
     f.actions
   end
