@@ -54,3 +54,15 @@ group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
+
+gem 'activeadmin', github: 'activeadmin'
+
+# Plus integrations with:
+gem 'devise'
+# gem 'cancan' # or cancancan
+# gem 	'draper'
+# gem 'pundit'
+
+
+gem 'carrierwave'
+gem 'cloudinary'

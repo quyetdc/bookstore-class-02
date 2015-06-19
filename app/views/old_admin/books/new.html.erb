@@ -1,0 +1,107 @@
+<!-- PAGE CONTENT -->
+<div class="container">
+  <!--  MAIN CONTENT  -->
+    <div class="col-md-8 col-md-offset-2">
+      <div class="admin-new-book-title">
+        <div class="col-md-6" style="padding-left: 0px;"> Admin / Add New Book</div>
+      </div>
+
+      <div class="admin-new-book-content">
+        <!--<form class="admin-new-book-form">-->
+
+          <!--<div class="form-group">-->
+            <!--<label for="exampleInputBookTitle">Title</label>-->
+            <!--<input type="text" class="form-control" id="exampleInputBookTitle" placeholder="Enter Book's Title">-->
+          <!--</div>-->
+
+          <!--<div class="form-group">-->
+            <!--<label for="exampleBookPrice">Price</label>-->
+            <!--<input type="number" class="form-control" id="exampleBookPrice" placeholder="Price">-->
+          <!--</div>-->
+
+          <!--<div class="form-group">-->
+            <!--<label for="exampleBookISBN">ISBN</label>-->
+            <!--<input type="number" class="form-control" id="exampleBookISBN" placeholder="ISBN">-->
+          <!--</div>-->
+
+          <!--<div class="form-group">-->
+            <!--<label for="exampleBookPublishedDate">Published Date</label>-->
+            <!--<input type="date" class="form-control" id="exampleBookPublishedDate" placeholder="Published Date">-->
+          <!--</div>-->
+
+          <!--<div class="form-group">-->
+            <!--<label for="exampleBookAuthor">Author</label>-->
+            <!--<select class="form-control">-->
+              <!--<option>Author 1</option>-->
+              <!--<option>Author 2</option>-->
+              <!--<option>Author 3</option>-->
+              <!--<option>Author 4</option>-->
+              <!--<option>Author 5</option>-->
+            <!--</select>-->
+          <!--</div>-->
+
+          <!--<div class="form-group">-->
+            <!--<label for="exampleBookAbout">About</label>-->
+            <!--<input type="textarea" class="form-control" id="exampleBookAbout" placeholder="Price">-->
+          <!--</div>-->
+
+          <!--<br />-->
+          <!--<button type="submit" class="btn btn-success" style="float: right; padding-left: 30px; padding-right: 30px; margin-bottom: 15px;">Submit</button>-->
+          <!--<br />-->
+          <!--<br />-->
+        <!--</form>-->
+
+        <%= form_for @book, url: {action: "create"},
+                            html: {class: "admin-new-book-form"} do |f| %>
+            <div class="form-group">
+              <%= f.label :name %>
+              <%= f.text_field :name, class: 'form-control' %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :isbn %>
+              <%= f.number_field :isbn, class: 'form-control' %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :authors %><br>
+
+              <% author_arr = [] %>
+              <% Author.all.each do |a| %>
+                <% author_arr << [a.name, a.id] %>
+              <% end %>
+
+              <%= f.select(:author_ids, options_for_select( author_arr ) ) %>
+            </div>
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+              Finish
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                  </div>
+                  <div class="modal-body">
+                    ...
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                    <%= f.submit 'Create Book', :class => "btn btn-success" %>
+                  </div>
+                </div>
+              </div>
+            </div>
+        <% end %>
+      </div>
+
+    </div>
+  <!--  END MAIN CONTENT  -->
+</div>
+<!-- END PAGE CONTENT -->

@@ -9,8 +9,7 @@ class BooksController < ApplicationController
   def index
 
     respond_to do |format|
-      format.html
-      format.json { render :json => {books: Book.all.to_json}, status: :ok}
+      format.json { render :json => Book.all.to_json, status: :ok}
     end
 
   end
@@ -30,18 +29,4 @@ class BooksController < ApplicationController
 
   end
 
-  def new
-    @book = Book.new()    
-  end
-
-  def create
-    @book = Book.create(books_param)
-    redirect_to root_path
-  end
-
-  private
-
-  def books_param
-    params.require(:book).permit(:name, :image)
-  end
 end

@@ -1,0 +1,9 @@
+<%= form_for @book, :html => { :class => 'form-horizontal', :style => "margin-top: 100px" } do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name, :class => 'form-control' %>
+
+	<%= f.label :image %>
+	<%= f.file_field :image %>
+	<%= f.submit %>
+
+<% end %>

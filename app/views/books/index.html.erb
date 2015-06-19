@@ -1,46 +1,29 @@
+<script>
+  $(document).ready(function(){
+      var booksArr = [];
 
+      $.ajax({
+          url: '/books.json',
+          type: 'GET',
+          dataType: "json",
+          success: function(data) {
+              booksObj = JSON.parse(data['books']);
 
-<!--  LANDING IMAGE  -->
-<div id="landing-img" class="container"></div>
+              for (var i = 0; i < booksObj.length; i ++){
+                booksArr.push( {
+                    id: booksObj[i].id,
+                    name: booksObj[i].name
+                } )
+              }
 
-<!-- PAGE CONTENT -->
-<div class="container">
+              console.log(booksArr);
 
-  <!--  SIDE BAR  -->
-  <div class="sidebar">
-    <!-- Best sellers -->
-    <div class="box-title box-content">
-      Best Sellers
-    </div>
+//              document.write(booksArr);
+          },
+          error: function(jqXHR, textStatus) {
+              alert( "Request failed: " + textStatus );
+          }
+      });
 
-    <div class="sidebar-list" id="lp-best-sellers">
-    </div>
-  </div>
-
-  <!--  MAIN CONTENT  -->
-  <div id="landing-products">
-    <div class="box-title box-content">
-      Books
-    </div>
-
-    <div class="products-list">
-      <ul>
-        <% if Book.count > 0 %>
-            <% Book.all.each do |book| %>
-                <li>
-                  <p class="product-img-box">
-                    <span style="display: inline-block; height: 100%; vertical-align: middle"></span>
-                    <%= image_tag("#{book.has_attribute?(:image) ? book.image: ''}", alt: 'Insert URL for Book') %>
-                  </p>
-
-                  <p class="product-price"><%= book.has_attribute?(:price) ? ('$' + book.price.to_s) : 'No Price Attribute' %></p>
-                  <%= link_to (book.has_attribute?(:name) ? book.name : 'No Name Attribute'), "books/#{book.id}" %>
-                </li>
-            <% end %>
-        <% end %>
-      </ul>
-    </div>
-  </div>
-  <!--  END MAIN CONTENT  -->
-</div>
-<!-- END PAGE CONTENT -->
+  });
+</script>
