@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   #   resources :books
   # end
 
+  get 'authors/:id' => "authors#show"
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -22,7 +24,9 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+  resources :books
+
+  delete 'books' => 'books#destroy'
 
   # Example resource route with options:
   #   resources :products do
